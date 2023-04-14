@@ -1,0 +1,13 @@
+import React from 'react'
+import './navbar.css'
+function Navbar() {
+  return (
+    <div className="navbar">
+        <a href="">PROFILE</a>
+        <a href="">MESSAGES</a>
+        <a href="">USERS</a>
+    </div>
+  );
+}
+
+export default Navbar;
