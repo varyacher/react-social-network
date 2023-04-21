@@ -2,25 +2,22 @@ import React from 'react'
 import './profile.css'
 import ava from '../../img/profile-photo/elon'
 import ava_min from '../../img/profile-photo/elon_mini'
+import Posts from './posts/Posts'
 
-function Profile() {
+function Profile(props) {
   return (
     <div className="profile">
         <div className="me">
             <img src={ava} alt="" />
-            <p>Elon Mask</p>
+            <p>{props.name}</p>
         </div>
-        <div className="posts">
-            <input type="text" placeholder="" />
-            <button> Add post</button>
-            <div className="post">
-                <img src={ava_min} alt="" />
-                <span>Elon Mask</span>
-                <p>Some text</p>
-            </div>
-        </div>
+        <Posts/>
     </div>
   );
 }
 
 export default Profile;
+
+
+
+// Добавить в описание профиля статус, город проживания + css

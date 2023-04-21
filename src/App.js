@@ -9,7 +9,7 @@ function App() {
     <div className="wrapper">
       <Header />
       <Navbar />
-      <Profile />
+      <Profile name="Mask Elon"/>
     </div>
   );
 }
