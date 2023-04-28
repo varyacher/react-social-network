@@ -1,10 +1,12 @@
 .me{
 	display: grid;
-	grid-template-columns: 3fr 9fr;
+	grid-template-columns: 9fr 9fr;
 	grid-gap: 10px;
+	width: 50%;
 }
 .me img{
 	width: 100%;
+	border-radius: 10px;
 }
 .posts{
 	margin: 10px;
@@ -13,7 +15,32 @@
 .posts img{
 	width: 40px;
 	margin: 5px;
+	border-radius: 10px;
 }
 .posts{
 	margin: 20px 0;
+}
+.profile{
+	display: flex;
+}
+.posts button{
+	background-color: #00BFFF;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	padding: 6px;
+}
+.posts button:hover{
+	color: #00BFFF;
+	background-color: white;
+}
+.posts input{
+	background-color: white;
+	border: 1px solid #191970;
+	border-radius: 4px;
+	padding: 6px;
+	margin-right: 5px;
+}
+.post span{
+	font-size: 18px;
 }

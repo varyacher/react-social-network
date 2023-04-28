@@ -8,10 +8,10 @@ function Posts() {
     <div className="posts">
         <input type="text" placeholder="enter the post" />
         <button> Add post</button>
-        <Post message=":)"/>
-        <Post message="text"/>
-        <Post message="123"/>
-        <Post message="Hi"/>
+        <Post message="Собираю команду для развития искусственного интеллекта."/>
+        <Post message="Искусственный интеллект захватывает мир!!!!!"/>
+        <Post message="Список покупок: хлеб, яблоки 2кг, twitter"/>
+        <Post message="Проверка связи - пост 1"/>
     </div>
   );
 }

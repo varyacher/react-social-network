@@ -10,6 +10,7 @@ function Profile(props) {
         <div className="me">
             <img src={ava} alt="" />
             <p>{props.name}</p>
+            <p>Место проживания: почти марс</p>
         </div>
         <Posts/>
     </div>
