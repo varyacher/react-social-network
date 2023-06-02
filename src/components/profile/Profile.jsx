@@ -3,16 +3,13 @@ import './profile.css'
 import ava from '../../img/profile-photo/elon'
 import ava_min from '../../img/profile-photo/elon_mini'
 import Posts from './posts/Posts'
+import ProfileInfo from './profileInfo/ProfileInfo'
 
 function Profile(props) {
   return (
     <div className="profile">
-        <div className="me">
-            <img src={ava} alt="" />
-            <p>{props.name}</p>
-            <p>Место проживания: почти марс</p>
-        </div>
-        <Posts/>
+        <ProfileInfo/>
+        <Posts postsData={props.profilePage.postsData}/>
     </div>
   );
 }

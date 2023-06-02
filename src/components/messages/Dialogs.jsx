@@ -4,21 +4,16 @@ import Message from './message/Message'
 import DialogsItem from './dialogsItem/dialogsItem'
 import {NavLink} from 'react-router-dom'
 
+
+
 function Dialogs(props) {
   return (
     <div className="dialogs">
       <div className="dialog">
-        <DialogsItem name={'Мария'} id={'1'}/>
-        <DialogsItem name={'Инакентий'} id={'2'}/>
-        <DialogsItem name={'Джон'} id={'3'}/>
-        <DialogsItem name={'Георгий'} id={'4'}/>
-        <DialogsItem name={'Татьяна'} id={'5'}/>
-        <DialogsItem name={'Анастасия'} id={'6'}/>
+        {props.dialogNames.map((el)=><DialogsItem name={el.name} id={el.id}/>)}
       </div>
       <div className="messages">
-        <Message message={':)'}/>
-        <Message message={'Привет'}/>
-        <Message message={'Го в театр'}/>
+        {props.messageItems.map((el)=><Message message={el.message} id={el.id}/>)}
         <input placeholder="" type="text"/>
         <button>ОТПРАВИТЬ</button>
       </div>

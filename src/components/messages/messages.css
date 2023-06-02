@@ -1,15 +1,16 @@
 
 button{
 	margin: 15px 0;
-	background-color: #00BFFF;
+	background-color: #6495ED;
 	color: white;
-	border: none;
+	border:1px solid white;
 	border-radius: 4px;
 	padding: 6px;
-	width: 30%;
+	width: 70%;
+	transition: 0.4s;
 }
 button:hover{
-	color: #00BFFF;
+	color: #6495ED;
 	background-color: white;
 }
 input{
@@ -25,6 +26,8 @@ input{
 	align-items: center;
 }
 .dialog{
+	border-radius: 30px;
+	background-color: #6495ED;
 	width: 30%;
 	margin: 5px;
 }
@@ -37,6 +40,9 @@ input{
 	text-decoration: none;
 }
 .messages{
+	background-color: #6495ED;
+	padding: 10px;
+	border-radius: 30px;
 	margin: 5px;
 	display: flex;
 	flex-direction: column;

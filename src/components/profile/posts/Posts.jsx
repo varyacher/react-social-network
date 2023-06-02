@@ -3,17 +3,17 @@ import './../profile.css'
 import ava_min from '../../../img/profile-photo/elon_mini'
 import Post from './post/Post'
 
-function Posts() {
+
+function Posts(props) {
   return (
     <div className="posts">
         <input type="text" placeholder="enter the post" />
         <button> Add post</button>
-        <Post message="Собираю команду для развития искусственного интеллекта."/>
-        <Post message="Искусственный интеллект захватывает мир!!!!!"/>
-        <Post message="Список покупок: хлеб, яблоки 2кг, twitter"/>
-        <Post message="Проверка связи - пост 1"/>
+        {props.postsData.map((el)=><Post message={el.message} id={el.id} likes={el.likes}/>)}
     </div>
   );
 }
 
 export default Posts;
+
+// В компоненте posts вынести данные в сторону в виде массива объектов. С помощью map() отрисовать все посты сразу
