@@ -1,6 +1,6 @@
 import React from 'react'
 import './../../profile.css'
-import ava_min from '../../../../img/profile-photo/elon_mini'
+import ava_min from '../../../../img/profile-photo/elon_mini.jpg'
 
 function Post(props) {
   return (

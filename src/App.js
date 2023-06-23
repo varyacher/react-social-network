@@ -4,6 +4,7 @@ import Header from './components/header/Header.jsx'
 import Navbar from './components/navbar/Navbar.jsx'
 import Profile from './components/profile/Profile.jsx'
 import Dialogs from './components/messages/Dialogs.jsx'
+import Friends from './components/friends/Friends.jsx'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 function App(props) {
@@ -11,11 +12,12 @@ function App(props) {
     <div className="wrapper">
       <BrowserRouter>
         <Header />
-        <Navbar />  
+        <Navbar friendsPage={props.state.friendsPage}/>  
         <Switch>
-          <Route exact path='/' render={()=><Profile postsData={props.state.profilePage}/>} />
-          <Route exact path='/profile' render={()=><Profile postsData={props.state.profilePage}/>} />
+          <Route exact path='/' render={()=><Profile profilePage={props.state.profilePage} addPost={props.addPost}/>} />
+          <Route exact path='/profile' render={()=><Profile profilePage={props.state.profilePage} addPost={props.addPost}/>} />
           <Route exact path='/dialogs' render={()=><Dialogs dialogNames={props.state.dialogPage.dialogNames} messageItems={props.state.dialogPage.messageItems}/>} />
+          // <Route exact path='/friends' render={()=><Friends friendData={props.state.frendsPage}/>} />
         </Switch>
       </BrowserRouter>
     </div>

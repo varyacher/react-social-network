@@ -1,6 +1,6 @@
 import React from 'react'
-import ava from '../../../img/profile-photo/elon'
-import ava_min from '../../../img/profile-photo/elon_mini'
+import ava from '../../../img/profile-photo/elon.jpg'
+import ava_min from '../../../img/profile-photo/elon_mini.jpg'
 import Posts from '../posts/Posts'
 
 function ProfileInfo(props) {
