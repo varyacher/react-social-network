@@ -14,9 +14,23 @@ function App(props) {
         <Header />
         <Navbar friendsPage={props.state.friendsPage}/>  
         <Switch>
-          <Route exact path='/' render={()=><Profile profilePage={props.state.profilePage} addPost={props.addPost}/>} />
-          <Route exact path='/profile' render={()=><Profile profilePage={props.state.profilePage} addPost={props.addPost}/>} />
-          <Route exact path='/dialogs' render={()=><Dialogs dialogNames={props.state.dialogPage.dialogNames} messageItems={props.state.dialogPage.messageItems}/>} />
+          <Route exact path='/' render={()=><Profile
+           profilePage={props.state.profilePage}
+           newPostText={props.state.profilePage.newPostText}
+           addPost={props.addPost}
+           onPostChange={props.onPostChange}
+           />}/>
+          <Route exact path='/profile' render={()=><Profile 
+            profilePage={props.state.profilePage} 
+            newPostText={props.state.profilePage.newPostText} 
+            addPost={props.addPost}
+            onPostChange={props.onPostChange}
+            />}/>
+          <Route exact path='/dialogs' render={()=><Dialogs 
+            dialogNames={props.state.dialogPage.dialogNames} 
+            messageItems={props.state.dialogPage.messageItems} 
+            addMessage={props.addMessage}
+            />}/>
           // <Route exact path='/friends' render={()=><Friends friendData={props.state.frendsPage}/>} />
         </Switch>
       </BrowserRouter>
