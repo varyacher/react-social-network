@@ -1,4 +1,3 @@
-import {rerenderTree} from './../render.jsx'
 let state = {
     profilePage:{
         postsData:[
@@ -32,6 +31,9 @@ let state = {
     }
 }
 
+export default state
+window.state = state
+
 export let addPost = (postText)=>{
     let newPost = {
         message:postText,
@@ -59,11 +61,17 @@ export let onPostChange = (text)=>{
     rerenderTree(state)
     console.log(text)
 }
+export let onMessageChange = (text)=>{
+    state.dialogPage.newMessageText = text
+    rerenderTree(state)
+}
 
-export default state
+let rerenderTree = ()=>{
+    console.log("function")
+}
+export let subscribe = (observer)=>{
+    rerenderTree = observer
+}
 
-// 1. Cоздаем реф
-// 2. Создаем функцию, которую будет вызывать кнопка
-// 3. Создаем функцию внутри state.js которая будет пушить в массив данные
-// 4. Прокидываем ее до компоненты
-// 5. current.value нашего рефа будет тем, что приходит в нашу функцию
+
+

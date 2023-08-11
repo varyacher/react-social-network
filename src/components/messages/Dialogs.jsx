@@ -8,10 +8,14 @@ import {NavLink} from 'react-router-dom'
 
 let messageText = React.createRef()
 
+
 function Dialogs(props) {
   let addMessage = ()=>{
     props.addMessage(messageText.current.value)
     messageText.current.value = ""
+  }
+  let onMessageChange = ()=>{
+    props.onMessageChange(messageText.current.value)
   }
   return (
     <div className="dialogs">
@@ -20,7 +24,7 @@ function Dialogs(props) {
       </div>
       <div className="messages">
         {props.messageItems.map((el)=><Message message={el.message} id={el.id}/>)}
-        <input ref={messageText} placeholder="" type="text"/>
+        <input onChange={onMessageChange} ref={messageText} placeholder="" type="text"/>
         <button onClick={addMessage}>ОТПРАВИТЬ</button>
       </div>
     </div>
