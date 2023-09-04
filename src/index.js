@@ -16,9 +16,9 @@ export let rerenderTree = (state)=>{
         state={state} 
         dispatch={store.dispatch.bind(store)}
         // addPost={store.addPost.bind(store)} 
-        addMessage={store.addMessage.bind(store)} 
+        // addMessage={store.addMessage.bind(store)} 
         // onPostChange={store.onPostChange.bind(store)} 
-        onMessageChange={store.onMessageChange.bind(store)}
+        // onMessageChange={store.onMessageChange.bind(store)}
       />
     </React.StrictMode>, 
     document.getElementById('root')

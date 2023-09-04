@@ -31,8 +31,9 @@ function App(props) {
           <Route exact path='/dialogs' render={()=><Dialogs 
             dialogNames={props.state.dialogPage.dialogNames} 
             messageItems={props.state.dialogPage.messageItems} 
-            addMessage={props.addMessage}
-            onMessageChange={props.onMessageChange}
+            // addMessage={props.addMessage}
+            // onMessageChange={props.onMessageChange}
+            dispatch={props.dispatch}
             />}/>
           // <Route exact path='/friends' render={()=><Friends friendData={props.state.frendsPage}/>} />
         </Switch>

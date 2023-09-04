@@ -1,3 +1,7 @@
+const ADD_POST = "ADD-POST"
+const POST_CHANGE = "POST-CHANGE"
+const ADD_MESSAGE = "ADD-MESSAGE"
+const MESSAGE_CHANGE = "MESSAGE-CHANGE"
 let store = {
     _state:{
         profilePage:{
@@ -21,7 +25,8 @@ let store = {
                 {message:'Как дела?', id:2}, 
                 {message:':)', id:3}, 
                 {message:'Го гулять', id:4}
-            ]
+            ],
+            newMessageText:""
         },
         friendsPage:{
             friendData:[
@@ -33,7 +38,7 @@ let store = {
     },
 
     dispatch(action){
-        if(action.type == "ADD-POST"){
+        if(action.type == ADD_POST){
             let newPost = {
                 message:this._state.profilePage.newPostText,
                 id:5,
@@ -43,34 +48,40 @@ let store = {
             this._state.profilePage.newPostText = ""
             this.rerenderTree(this._state)
         }
-        else if(action.type == "POST-CHANGE"){
+        else if(action.type == POST_CHANGE){
             this._state.profilePage.newPostText = action.text
             this.rerenderTree(this._state)
         }
-
+        else if(action.type == ADD_MESSAGE){
+            let newMessage = {
+                message:this._state.dialogPage.newMessageText,
+                id:5
+            }
+            this._state.dialogPage.messageItems.push(newMessage)
+            this.rerenderTree(this._state)
+        }
+        else if(action.type == MESSAGE_CHANGE){
+            this._state.dialogPage.newMessageText = action.text
+            this.rerenderTree(this._state)
+        }
     },
     // addPost(postText){
         
     //     // console.log(state)
     // },
 
-    addMessage(messageText){
-        let newMessage = {
-            message:messageText,
-            id:5
-        }
-        this._state.dialogPage.messageItems.push(newMessage)
-        this.rerenderTree(this._state)
+    // addMessage(messageText){
+        
         // console.log(state)
-    },
+    // },
 
     // onPostChange(text){
         
     // },
-    onMessageChange(text){
-        this._state.dialogPage.newMessageText = text
-        this.rerenderTree(this._state)
-    },
+    // onMessageChange(text){
+    //     this._state.dialogPage.newMessageText = text
+    //     this.rerenderTree(this._state)
+    // },
 
     rerenderTree(){
         console.log("function")
@@ -82,6 +93,19 @@ let store = {
         return this._state
     }
 }
+export let addPostAC = ()=>{
+  return {
+    type: "ADD-POST",
+    id: 1
+  }
+} 
+export let onPostChangeAC = (text)=>{
+  return {
+    type: "POST-CHANGE",
+    text: text
+  }
+}
+
 export default store
 
 
