@@ -17,14 +17,16 @@ function App(props) {
           <Route exact path='/' render={()=><Profile
            profilePage={props.state.profilePage}
            newPostText={props.state.profilePage.newPostText}
-           addPost={props.addPost}
-           onPostChange={props.onPostChange}
+           // addPost={props.addPost}
+           // onPostChange={props.onPostChange}
+           dispatch={props.dispatch}
            />}/>
           <Route exact path='/profile' render={()=><Profile 
             profilePage={props.state.profilePage} 
             newPostText={props.state.profilePage.newPostText} 
-            addPost={props.addPost}
-            onPostChange={props.onPostChange}
+            // addPost={props.addPost}
+            // onPostChange={props.onPostChange}
+            dispatch={props.dispatch}
             />}/>
           <Route exact path='/dialogs' render={()=><Dialogs 
             dialogNames={props.state.dialogPage.dialogNames} 

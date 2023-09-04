@@ -11,9 +11,10 @@ function Profile(props) {
         <ProfileInfo/>
         <Posts 
         postsData={props.profilePage.postsData} 
-        addPost={props.addPost} 
+        // addPost={props.addPost} 
         newPostText={props.newPostText} 
-        onPostChange={props.onPostChange}
+        // onPostChange={props.onPostChange}
+        dispatch={props.dispatch}
         />
     </div>
   );
@@ -23,4 +24,3 @@ export default Profile;
 
 
 
-// Добавить в описание профиля статус, город проживания + css
