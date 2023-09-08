@@ -2,7 +2,7 @@ import React from 'react'
 import './../profile.css'
 import ava_min from '../../../img/profile-photo/elon_mini.jpg'
 import Post from './post/Post'
-import {addPostAC, onPostChangeAC} from '../../../data/state.js'
+import {addPostAC, onPostChangeAC} from '../../../data/profileReducer.js'
 
 
 

@@ -1,3 +1,4 @@
+import profileReducer from './profileReducer'
 const ADD_POST = "ADD-POST"
 const POST_CHANGE = "POST-CHANGE"
 const ADD_MESSAGE = "ADD-MESSAGE"
@@ -38,21 +39,9 @@ let store = {
     },
 
     dispatch(action){
-        if(action.type == ADD_POST){
-            let newPost = {
-                message:this._state.profilePage.newPostText,
-                id:5,
-                likes:10
-            }
-            this._state.profilePage.postsData.unshift(newPost)
-            this._state.profilePage.newPostText = ""
-            this.rerenderTree(this._state)
-        }
-        else if(action.type == POST_CHANGE){
-            this._state.profilePage.newPostText = action.text
-            this.rerenderTree(this._state)
-        }
-        else if(action.type == ADD_MESSAGE){
+        this._state.profilePage = profileReducer(action, this._state.profilePage)
+        this.rerenderTree(this._state)
+        if(action.type == ADD_MESSAGE){
             let newMessage = {
                 message:this._state.dialogPage.newMessageText,
                 id:5
@@ -93,17 +82,18 @@ let store = {
         return this._state
     }
 }
-export let addPostAC = ()=>{
-  return {
-    type: "ADD-POST",
-    id: 1
-  }
-} 
-export let onPostChangeAC = (text)=>{
-  return {
-    type: "POST-CHANGE",
-    text: text
-  }
+
+export let addMessageAC = ()=>{
+    return {
+        type: "ADD-MESSAGE",
+        id: 1
+    }
+}
+export let onMessageChangeAC = (text)=>{
+    return {
+        type: "MESSAGE-CHANGE",
+        text: text
+    }
 }
 
 export default store
