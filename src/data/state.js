@@ -1,4 +1,5 @@
 import profileReducer from './profileReducer'
+import dialogReducer from './dialogReducer'
 const ADD_POST = "ADD-POST"
 const POST_CHANGE = "POST-CHANGE"
 const ADD_MESSAGE = "ADD-MESSAGE"
@@ -40,19 +41,8 @@ let store = {
 
     dispatch(action){
         this._state.profilePage = profileReducer(action, this._state.profilePage)
+        this._state.dialogPage = dialogReducer(action, this._state.dialogPage)
         this.rerenderTree(this._state)
-        if(action.type == ADD_MESSAGE){
-            let newMessage = {
-                message:this._state.dialogPage.newMessageText,
-                id:5
-            }
-            this._state.dialogPage.messageItems.push(newMessage)
-            this.rerenderTree(this._state)
-        }
-        else if(action.type == MESSAGE_CHANGE){
-            this._state.dialogPage.newMessageText = action.text
-            this.rerenderTree(this._state)
-        }
     },
     // addPost(postText){
         
@@ -83,18 +73,6 @@ let store = {
     }
 }
 
-export let addMessageAC = ()=>{
-    return {
-        type: "ADD-MESSAGE",
-        id: 1
-    }
-}
-export let onMessageChangeAC = (text)=>{
-    return {
-        type: "MESSAGE-CHANGE",
-        text: text
-    }
-}
 
 export default store
 

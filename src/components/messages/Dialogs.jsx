@@ -3,7 +3,7 @@ import './messages.css'
 import Message from './message/Message'
 import DialogsItem from './dialogsItem/dialogsItem'
 import {NavLink} from 'react-router-dom'
-import {addMessageAC, onMessageChangeAC} from '../../data/state.js'
+import {addMessageAC, onMessageChangeAC} from '../../data/dialogReducer.js'
 
 
 
